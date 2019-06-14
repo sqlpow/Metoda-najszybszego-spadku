@@ -3,12 +3,12 @@ Implementation of Steepest Descent Algorithm in Julia
 
 Steepest Descent is an algorithm to minimalize function. A typical example of the usage of Steepest Descent is given below.
 
-###Step 1
+### Step 1
 Declare derivative of the function you want to optimize.
 
   f(x) = 2*x + 5
 
-###Step 2
+### Step 2
 Use SteepestDescent function. Enter yours f(x) and starting point.
 
   SteepestDescent(f, 3)
