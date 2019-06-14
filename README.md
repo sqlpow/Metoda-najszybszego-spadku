@@ -5,7 +5,8 @@ Steepest Descent is an algorithm to minimalize function. A typical example of th
 
 ### Step 1
 Declare derivative of the function you want to optimize.
-  f(x) = 2*x + 5
+
+    f(x) = 2*x + 5
 
 ### Step 2
 Use SteepestDescent function. Enter your f(x) and starting point.
