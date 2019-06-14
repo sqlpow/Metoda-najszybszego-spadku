@@ -2,13 +2,40 @@
 Implementation of Steepest Descent Algorithm in Julia
 
 Steepest Descent is an algorithm to minimalize function. A typical example of the usage of Steepest Descent is given below.
-
 ### Step 1
-Declare derivative of the function you want to optimize.
+Run code.
 
-    f(x) = 2*x + 5
+    using ForwardDiff
+  
+   
+        function SteepestDescent(f::Function, x::Integer)
+        
+            precision = 0.000001
+            max_iters = 10000
+            previous_step_size = 1
+            rate = 0.01 
+            iters = 0 
+
+
+            while previous_step_size > precision && iters < max_iters
+                prev_x = x 
+                df = ForwardDiff.gradient(z -> f(z[1]), [prev_x])
+                x = x - rate *  df[1]
+                previous_step_size = abs(x - prev_x) 
+                iters = iters+1 
+                println("Iteration ", iters)
+                println("x value is ", x)
+            end
+        print("\nThe local minimum occurs at ", x)
+        
+    end
 
 ### Step 2
+Declare function you want to optimize.
+
+    f(x) = x^2 + 5x
+
+### Step 3
 Use SteepestDescent function. Enter your f(x) and starting point.
 
     SteepestDescent(f, 3)
